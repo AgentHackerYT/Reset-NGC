@@ -112,7 +112,7 @@ Review the script before running it.
 
 ## License
 
-MIT (or choose your preferred license)
+MIT
 
 ---
 
