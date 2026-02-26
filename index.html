@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Reset NGC Folder Tool</title>
+<style>
+/* ===== Variables ===== */
+:root {
+    --primary: #0078d7;
+    --primary-dark: #005ea6;
+    --background: #f5f7fa;
+    --card-bg: #fff;
+    --text-color: #333;
+    --warning-bg: #fff4e5;
+    --warning-color: #9c5a00;
+    --border-radius: 12px;
+    --shadow: 0 10px 30px rgba(0,0,0,0.08);
+    --transition: 0.3s ease;
+}
+
+/* ===== Base ===== */
+* { box-sizing: border-box; margin:0; padding:0; }
+body {
+    font-family: "Inter", "Segoe UI", sans-serif;
+    background: var(--background);
+    color: var(--text-color);
+    line-height: 1.6;
+}
+
+/* ===== Header ===== */
+header {
+    background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+    color: #fff;
+    text-align: center;
+    padding: 4rem 1rem;
+    position: relative;
+}
+header h1 {
+    font-size: 2.8rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+}
+header p {
+    font-size: 1.2rem;
+    opacity: 0.9;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+/* ===== Main ===== */
+main {
+    max-width: 900px;
+    margin: -60px auto 3rem auto;
+    padding: 2rem;
+}
+
+/* ===== Cards ===== */
+.card {
+    background: var(--card-bg);
+    padding: 2rem;
+    border-radius: var(--border-radius);
+    margin: 1.5rem 0;
+    box-shadow: var(--shadow);
+    transition: transform var(--transition);
+}
+.card:hover { transform: translateY(-5px); }
+h2 { color: var(--primary); margin-bottom: 0.5rem; }
+
+/* ===== Warning Box ===== */
+.warning {
+    background: var(--warning-bg);
+    color: var(--warning-color);
+    padding: 1.5rem;
+    border-left: 6px solid var(--warning-color);
+    border-radius: var(--border-radius);
+    margin: 1.5rem 0;
+    font-weight: 500;
+}
+
+/* ===== Buttons ===== */
+.download-btn {
+    display: inline-block;
+    padding: 1rem 2rem;
+    background: var(--primary);
+    color: #fff;
+    font-weight: 600;
+    border-radius: var(--border-radius);
+    text-decoration: none;
+    transition: all var(--transition);
+    margin: 1.5rem 0;
+}
+.download-btn:hover {
+    background: var(--primary-dark);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+}
+
+/* ===== Lists ===== */
+ol { margin: 1rem 0 1.5rem 1.5rem; }
+
+/* ===== Footer ===== */
+footer {
+    text-align: center;
+    padding: 1.5rem;
+    font-size: 0.9rem;
+    color: #666;
+}
+
+/* ===== Links ===== */
+a { color: var(--primary); text-decoration: none; }
+a:hover { text-decoration: underline; }
+
+/* ===== Responsive ===== */
+@media (max-width: 600px) {
+    header h1 { font-size: 2rem; }
+    header p { font-size: 1rem; }
+    main { margin: -40px 1rem 2rem 1rem; padding: 1.5rem; }
+    .download-btn { width: 100%; text-align: center; }
+}
+</style>
+</head>
+<body>
+
+<header>
+    <h1>Reset NGC Folder Tool</h1>
+    <p>Repair Windows Hello PIN and Face recognition issues after Windows updates with a single script.</p>
+</header>
+
+<main>
+    <!-- Overview -->
+    <div class="card">
+        <h2>Overview</h2>
+        <p>This script resets the Windows Hello NGC folder, which can become corrupted after updates. Running it allows you to reconfigure your PIN and Face recognition easily.</p>
+    </div>
+
+    <!-- Warning -->
+    <div class="warning">
+        <strong>Warning:</strong> Running this script will remove your Windows Hello PIN and biometric data. You will need to set up your sign-in methods again.
+    </div>
+
+    <!-- Download -->
+    <a class="download-btn" href="https://github.com/AgentHackerYT/Reset-NGC/raw/main/Reset-NGC.bat" download>Download Reset-NGC.bat</a>
+
+    <!-- Instructions -->
+    <div class="card">
+        <h2>Instructions</h2>
+        <ol>
+            <li>Download <code>Reset-NGC.bat</code></li>
+            <li>Right-click → Run as Administrator</li>
+            <li>Follow the prompts</li>
+            <li>Reboot when asked</li>
+            <li>Set up your PIN and Face recognition again</li>
+        </ol>
+    </div>
+
+    <!-- VirusTotal -->
+    <div class="card">
+        <h2>Safety Scan</h2>
+        <p>For transparency, this script has been scanned by VirusTotal. <a href="https://www.virustotal.com/gui/file/c303a80f761be4d652fb3e977e4454181511370e0a23218a90e625713d43556e" target="_blank">View Report</a></p>
+    </div>
+</main>
+
+<footer>
+    &copy; 2026 Reset NGC Tool. Use at your own discretion. | <a href="https://github.com/AgentHackerYT/Reset-NGC" target="_blank">GitHub Repository</a>
+</footer>
+
+</body>
+</html>
