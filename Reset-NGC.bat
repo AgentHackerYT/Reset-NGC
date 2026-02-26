@@ -1,6 +1,8 @@
 @echo off
 title Reset NGC Folder Tool
 
+set "NGC=C:\Windows\ServiceProfiles\LocalService\AppData\Local\Microsoft\Ngc"
+
 :: ===== Check for Admin Rights =====
 net session >nul 2>&1
 if %errorLevel% NEQ 0 (
@@ -13,30 +15,49 @@ echo.
 echo Running with Administrator privileges...
 echo.
 
-:: ===== Commands =====
+:: ===== Check if Folder Exists =====
+if not exist "%NGC%" (
+    echo NGC folder not found.
+    echo Nothing to reset.
+    pause
+    exit /b
+)
+
+echo WARNING:
+echo This will remove Windows Hello PIN and biometric data.
+echo.
+
+choice /m "Continue?"
+if %errorlevel%==2 exit /b
+
+echo.
+echo Stopping Windows Biometric Service...
+net stop WbioSrvc >nul 2>&1
+
 echo Taking ownership...
-takeown /f C:\Windows\ServiceProfiles\LocalService\AppData\Local\Microsoft\Ngc /r /d y
+takeown /f "%NGC%" /r /d y >nul
 
-echo.
 echo Granting permissions...
-icacls C:\Windows\ServiceProfiles\LocalService\AppData\Local\Microsoft\Ngc /grant administrators:F /t
+icacls "%NGC%" /grant administrators:F /t >nul
 
-echo.
 echo Removing folder...
-rd /s /q C:\Windows\ServiceProfiles\LocalService\AppData\Local\Microsoft\Ngc
+rd /s /q "%NGC%"
+
+if exist "%NGC%" (
+    echo Failed to remove NGC folder.
+    echo Please reboot and try again.
+    pause
+    exit /b
+)
 
 echo.
-echo =====================================
-echo Operation completed.
-echo =====================================
+echo Reset completed successfully.
 echo.
 
-:: ===== Reboot Prompt =====
-choice /m "Do you want to reboot now?"
+choice /m "Reboot now?"
 if %errorlevel%==1 (
-    echo Rebooting...
     shutdown /r /t 0
 ) else (
-    echo You chose to reboot later.
+    echo Please reboot manually before setting up Windows Hello again.
     pause
 )
