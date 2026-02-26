@@ -134,7 +134,16 @@ VirusTotal aggregates results from multiple antivirus engines. A clean report in
 Users are encouraged to review scripts before running them, as a best practice.
 
 ---
+### Security Note
 
+Some antivirus or security scanners (e.g., VirusTotal) may flag this script due to the actions it performs:
+
+- Modifies folder permissions and ownership
+- Stops/starts Windows services
+- Deletes Windows Hello container
+
+These behaviors are necessary for the repair and **do not indicate malware**. Use the script only on your own system.
+---
 ## License
 
 MIT 
