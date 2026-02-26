@@ -54,6 +54,16 @@ echo.
 echo Reset completed successfully.
 echo.
 
+:: ===== Restart Biometric Service =====
+echo Starting Windows Biometric Service...
+net start WbioSrvc >nul 2>&1
+if %errorlevel%==0 (
+    echo Windows Biometric Service started successfully.
+) else (
+    echo Failed to start Windows Biometric Service. You may need to start it manually.
+)
+
+echo.
 choice /m "Reboot now?"
 if %errorlevel%==1 (
     shutdown /r /t 0
