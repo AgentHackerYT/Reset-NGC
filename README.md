@@ -6,6 +6,20 @@ This script resets the corrupted Windows Hello container (NGC folder) so Face re
 
 ---
 
+## Download
+
+Download the script directly from the repository:
+
+https://github.com/AgentHackerYT/Reset-NGC/blob/main/Reset-NGC.bat
+
+Click **"Raw"** → then **Save As** → save the file as:
+
+Reset-NGC.bat
+
+Make sure the file extension is `.bat` and not `.txt`.
+
+---
+
 ## Overview
 
 After certain cumulative or feature updates, Windows Hello may stop working. Common symptoms include:
@@ -72,7 +86,7 @@ Use this tool if:
 
 - Windows Hello stopped working immediately after a Windows Update
 - IR camera is still detected in Device Manager
-- Biometric Service is running but Hello fails to initialize
+- Windows Biometric Service is running but Hello fails to initialize
 - PIN setup throws errors after update
 
 ---
@@ -112,7 +126,7 @@ Review the script before running it.
 
 ## License
 
-MIT
+MIT 
 
 ---
 
