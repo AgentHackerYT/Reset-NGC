@@ -124,6 +124,17 @@ Review the script before running it.
 
 ---
 
+### Optional Safety Scan
+
+For transparency, we’ve submitted the script to VirusTotal:
+
+https://www.virustotal.com/gui/file/c303a80f761be4d652fb3e977e4454181511370e0a23218a90e625713d43556e
+
+VirusTotal aggregates results from multiple antivirus engines. A clean report indicates no detections across those engines at the time of scanning.  
+Users are encouraged to review scripts before running them, as a best practice.
+
+---
+
 ## License
 
 MIT 
